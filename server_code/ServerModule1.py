@@ -16,5 +16,6 @@ import anvil.server
 #   return 42
 #
 @anvil.server.callable
-def sumbit(name,mail id,branch,response):
-  pass
+def sumbit(name , mailid , branch , response):
+  app_tables.table_1.add_row(name=name , mailid=mailid , branch=branch , response=response)
+  
