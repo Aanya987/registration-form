@@ -10,4 +10,22 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
   server_spec: null}
 metadata: {title: 'enter the entries ', description: registration website}
 startup_form: Form1
+db_schema:
+  table_1:
+    client: none
+    server: full
+    columns:
+    - name: NAME
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: MAIL ID
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: BRACH
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: RESPONSE
+      admin_ui: {width: 200, order: 3}
+      type: bool
+    title: Table 1
 renamed: true
