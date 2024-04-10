@@ -3,6 +3,15 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
 package_name: registration_form
 allow_embedding: false
 name: registration form
@@ -13,19 +22,20 @@ startup_form: Form1
 db_schema:
   table_1:
     client: none
-    server: full
+    server: search
     columns:
-    - name: NAME
-      admin_ui: {width: 200, order: 0}
+    - name: name
+      admin_ui: {order: 0, width: 200}
       type: string
-    - name: MAIL ID
-      admin_ui: {width: 200, order: 1}
+    - name: mailid
+      admin_ui: {order: 1, width: 200}
       type: string
-    - name: BRACH
-      admin_ui: {width: 200, order: 2}
+    - name: branch
+      admin_ui: {order: 2, width: 200}
       type: string
-    - name: RESPONSE
-      admin_ui: {width: 200, order: 3}
+    - name: response
+      admin_ui: {order: 3, width: 200}
       type: bool
     title: Table 1
+uplink_visible: true
 renamed: true

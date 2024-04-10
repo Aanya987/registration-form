@@ -1,3 +1,7 @@
+import anvil.google.auth, anvil.google.drive, anvil.google.mail
+from anvil.google.drive import app_files
+import anvil.secrets
+import anvil.email
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -17,5 +21,5 @@ import anvil.server
 #
 @anvil.server.callable
 def sumbit(name , mailid , branch , response):
-  app_tables.table_1.add_row(name=name , mailid=mailid , branch=branch , response=response)
-  
+  app_tables.table_1.add_row(name=name , mailid=mailid , branch=branch ,response=response)
+  anvil.email.send(to="aanyaaa.021@gmail.com", subject="response from anvil app", text=f"feedbck from {name} : branch is : {branch} and mailid is: {mailid} , copy of response: {response}" )
