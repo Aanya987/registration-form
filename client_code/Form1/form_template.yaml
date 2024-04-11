@@ -73,7 +73,7 @@ components:
     type: Label
     layout_properties: {}
 - name: label_5
-  properties: {text: SRM REGISTRATION FORM, background: '', border: '', font_size: 23,
-    italic: true, underline: false, bold: true, spacing_below: large}
+  properties: {align: center, border: '', text: SRM REGISTRATION FORM, font_size: 23,
+    spacing_below: large, italic: true, background: '', bold: true, underline: false}
   type: Label
   layout_properties: {slot: title}
