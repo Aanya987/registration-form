@@ -10,14 +10,28 @@ container:
   data_bindings:
   - {property: tooltip, code: 'self.item['''']', writeback: false}
 components:
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components: []
 - type: ColumnPanel
-  properties: {col_widths: '{}', background: 'theme:On Primary'}
+  properties: {col_widths: '{}', background: 'theme:On Primary', col_spacing: small}
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: label_5
+    properties: {align: center, border: '', text: SRM REGISTRATION FORM, font_size: 23,
+      spacing_below: large, italic: false, background: '', bold: false, underline: true}
+    type: Label
+    layout_properties: {grid_position: 'NPKLPU,JSKVDH'}
+  - name: label_6
+    properties: {text: ~ AANYA, font_size: 15, align: right}
+    type: Label
+    layout_properties: {grid_position: 'NHCMIH,DCZQTB'}
   - name: label_1
     properties: {align: left, bold: true, text: Enter your name, spacing_above: medium,
-      spacing_below: medium, font_size: 19}
+      spacing_below: medium, font_size: 19, italic: true}
     type: Label
     layout_properties: {grid_position: 'NPNEVT,DQMBOF'}
   - name: text_box_1
@@ -36,7 +50,7 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'NWADBF,QFWLCT'}
   - name: label_3
-    properties: {text: Enter your branch, bold: true, font_size: 19}
+    properties: {text: Enter your branch, bold: true, font_size: 19, italic: true}
     type: Label
     layout_properties: {grid_position: 'ULHEBN,LACOMA'}
   - name: text_box_3
@@ -62,18 +76,15 @@ components:
     type: Button
     layout_properties: {grid_position: 'HIYVEI,PGOUGM'}
     event_bindings: {click: outlined_button_1_click}
-  data_bindings: []
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
-  components:
-  - name: label_6
-    properties: {text: ~ AANYA, font_size: 15}
+  - name: image_1
+    properties: {source: _/theme/srm.jpeg, visible: true, display_mode: fill_width}
+    type: Image
+    layout_properties: {grid_position: 'IOHDQB,SSIXXG'}
+  - name: label_4
+    properties: {role: title, align: center, border: ROUND, foreground: 'theme:Primary',
+      text: THANKS FOR VISITING !!!!!!!!!, font_size: 19, font: CALABRIC, spacing_above: large,
+      icon_align: top, spacing_below: large, italic: true, background: 'theme:Secondary
+        Container', bold: true}
     type: Label
-    layout_properties: {}
-- name: label_5
-  properties: {align: center, border: '', text: SRM REGISTRATION FORM, font_size: 23,
-    spacing_below: large, italic: true, background: '', bold: true, underline: false}
-  type: Label
-  layout_properties: {slot: title}
+    layout_properties: {grid_position: 'DVBDLA,VWQLYA'}
+  data_bindings: []
