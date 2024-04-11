@@ -21,8 +21,8 @@ metadata: {title: 'enter the entries ', description: registration website}
 startup_form: Form1
 db_schema:
   table_1:
-    client: none
-    server: search
+    client: full
+    server: full
     columns:
     - name: name
       admin_ui: {order: 0, width: 200}

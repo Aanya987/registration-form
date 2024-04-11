@@ -3,7 +3,7 @@ container:
   type: HtmlTemplate
   properties:
     html: '@theme:standard-page.html'
-    background: theme:Primary
+    background: theme:Tertiary Container
     border: '23'
     foreground: theme:On Secondary Container
     role: [selected, outlined-card, outlined-button]
@@ -11,7 +11,7 @@ container:
   - {property: tooltip, code: 'self.item['''']', writeback: false}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{}', background: 'theme:On Primary'}
   name: content_panel
   layout_properties: {slot: default}
   components:
@@ -44,8 +44,8 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'KQXHQA,BRKPYP'}
   - name: check_box1
-    properties: {text: 'WANT A COPY  OF RESPONSE?', italic: true, background: 'theme:Primary',
-      foreground: 'theme:On Secondary Container', underline: true, icon: 'fa:angle-double-right',
+    properties: {text: 'WANT A COPY  OF RESPONSE?', italic: true, background: 'theme:On
+        Primary', foreground: 'theme:On Primary Container', underline: true, icon: 'fa:angle-double-right',
       font: '', font_size: 16}
     type: Label
     layout_properties: {grid_position: 'VXPIXE,PTQFPT'}
@@ -62,6 +62,7 @@ components:
     type: Button
     layout_properties: {grid_position: 'HIYVEI,PGOUGM'}
     event_bindings: {click: outlined_button_1_click}
+  data_bindings: []
 - type: FlowPanel
   properties: {}
   name: navbar_links
