@@ -1,68 +1,70 @@
-dependencies: []
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/anvil/email.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/anvil/secrets.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/google.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: false, enable_automatically: true, use_email: true,
-    confirm_email: true}
-  server_config: {user_table: users}
-package_name: registration_form
 allow_embedding: false
-name: registration form
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
-metadata: {title: 'enter the entries ', description: registration website}
-startup_form: Form1
 db_schema:
-  table_1:
+  srm_responses:
     client: full
-    server: full
     columns:
-    - name: name
-      admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: 0, width: 200}
+      name: name
       type: string
-    - name: mailid
-      admin_ui: {order: 1, width: 291}
+    - admin_ui: {order: 1, width: 291}
+      name: mailid
       type: string
-    - name: branch
-      admin_ui: {order: 2, width: 200}
+    - admin_ui: {order: 2, width: 200}
+      name: branch
       type: string
-    - name: response
-      admin_ui: {order: 3, width: 200}
+    - admin_ui: {order: 3, width: 200}
+      name: response
       type: bool
-    title: Table 1
+    server: full
+    title: srm_responses
   users:
     client: none
-    server: full
     columns:
-    - name: email
-      admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: 0, width: 200}
+      name: email
       type: string
-    - name: enabled
-      admin_ui: {order: 1, width: 200}
+    - admin_ui: {order: 1, width: 200}
+      name: enabled
       type: bool
-    - name: last_login
-      admin_ui: {order: 2, width: 200}
+    - admin_ui: {order: 2, width: 200}
+      name: last_login
       type: datetime
-    - name: password_hash
-      admin_ui: {order: 3, width: 200}
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
       type: string
-    - name: n_password_failures
-      admin_ui: {order: 4, width: 200}
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
       type: number
-    - name: confirmed_email
-      admin_ui: {order: 5, width: 200}
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
       type: bool
+    server: full
     title: Users
-uplink_visible: true
+dependencies: []
+metadata: {description: registration website, title: 'enter the entries '}
+name: registration form
+package_name: registration_form
 renamed: true
+runtime_options:
+  client_version: '3'
+  server_spec: {}
+  server_version: python3-sandbox
+  version: 2
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/email.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/google.yml
+- client_config: {allow_signup: false, confirm_email: true, enable_automatically: true, use_email: true}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+startup_form: Form1
+uplink_visible: true

@@ -1045,4 +1045,298 @@ div.plot-container.plotly svg.main-svg {
 
 .anvil-spinner {
     --anvil-spinner-bg: %color:Surface Variant%;
+}//* =========================================================
+CUSTOM UI FOR SRM REGISTRATION FORM
+PASTE THIS AT THE VERY END OF theme.css
+========================================================= */
+
+/* ---------- PAGE BACKGROUND ---------- */
+body {
+  background: linear-gradient(135deg, #fff8fc 0%, #f8f2ff 45%, #fdfcff 100%) !important;
+}
+
+.content {
+  position: relative;
+}
+
+.content::before {
+  content: "";
+  position: fixed;
+  top: 90px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(192,132,252,0.18) 0%, rgba(192,132,252,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content::after {
+  content: "";
+  position: fixed;
+  bottom: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(244,114,182,0.14) 0%, rgba(244,114,182,0) 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* make form content appear above glow */
+.content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.content > * > .anvil-container {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+/* ---------- APP BAR ---------- */
+.app-bar {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(194, 169, 231, 0.25);
+  box-shadow: 0 8px 24px rgba(91, 63, 131, 0.08);
+}
+
+.app-bar.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* title inside app bar */
+.app-bar .title,
+.app-bar .title .anvil-label,
+.app-bar .title .anvil-component {
+  color: #4b2d63 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+.nav-holder .left-nav,
+.left-nav-placeholder {
+  background: linear-gradient(180deg, #fff9fc 0%, #f7efff 100%) !important;
+  border-right: 1px solid rgba(185, 160, 220, 0.18);
+}
+
+.left-nav a,
+.left-nav .anvil-label {
+  border-radius: 14px !important;
+  transition: all 0.25s ease;
+}
+
+.left-nav a:hover {
+  background: rgba(176, 124, 232, 0.10) !important;
+  transform: translateX(2px);
+}
+
+/* ---------- MAIN FORM CARD LOOK ---------- */
+/* This targets cards if you used role = elevated / outlined / tonal card */
+.anvil-role-elevated-card,
+.anvil-role-outlined-card,
+.anvil-role-tonal-card {
+  border-radius: 28px !important;
+  padding: 30px !important;
+  background: rgba(255,255,255,0.78) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 176, 227, 0.28) !important;
+  box-shadow: 0 16px 40px rgba(101, 73, 140, 0.14) !important;
+}
+
+/* If your form is directly inside a normal ColumnPanel, this gives it a soft card feel too */
+.content .column-panel {
+  border-radius: 24px;
+}
+
+/* ---------- FORM TITLE / HEADING ---------- */
+h1, h2, h3, h4, h5, h6 {
+  color: #4b2d63;
+  letter-spacing: 0.3px;
+}
+
+.anvil-role-headline {
+  font-size: 34px !important;
+  font-weight: 800 !important;
+  color: #4b2d63 !important;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px !important;
+}
+
+.anvil-role-title {
+  color: #5a3a73 !important;
+  font-weight: 700 !important;
+}
+
+.anvil-label {
+  color: #3f2a56;
+}
+
+/* ---------- INPUT LABEL LOOK ---------- */
+.anvil-label,
+label {
+  font-weight: 500;
+}
+
+/* ---------- TEXT INPUTS ---------- */
+input.anvil-component,
+textarea.anvil-component,
+.anvil-component select,
+.anvil-datepicker input {
+  background: linear-gradient(180deg, #fffaff 0%, #fcf8ff 100%) !important;
+  border: 1.5px solid #e6d8f4 !important;
+  border-radius: 16px !important;
+  padding: 14px 16px !important;
+  color: #3d2c4f !important;
+  box-shadow: 0 6px 16px rgba(120, 90, 170, 0.06);
+  transition: all 0.28s ease;
+  border-bottom: 1.5px solid #e6d8f4 !important;
+}
+
+/* placeholders */
+input.anvil-component::placeholder,
+textarea.anvil-component::placeholder {
+  color: #9d8bb5 !important;
+  opacity: 1;
+}
+
+/* hover */
+input.anvil-component:hover,
+textarea.anvil-component:hover,
+.anvil-component select:hover,
+.anvil-datepicker input:hover {
+  background: #ffffff !important;
+  border-color: #d1b2f4 !important;
+  box-shadow: 0 10px 20px rgba(168, 123, 224, 0.10);
+}
+
+/* focus */
+input.anvil-component:focus,
+textarea.anvil-component:focus,
+.anvil-component select:focus,
+.anvil-datepicker input:focus {
+  background: #ffffff !important;
+  border: 2px solid #b07ce8 !important;
+  box-shadow: 0 0 0 4px rgba(176, 124, 232, 0.16) !important;
+  padding: 13px 15px !important;
+  outline: none !important;
+}
+
+/* ---------- CHECKBOX ---------- */
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: #f7efff;
+  border: 1px solid #d8c2f3;
+  box-shadow: 0 2px 8px rgba(140, 102, 191, 0.08);
+}
+
+.checkbox input:checked {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%) !important;
+  color: #fff !important;
+  border-color: #a855f7 !important;
+}
+
+.checkbox span,
+.checkbox label {
+  color: #4a305f !important;
+  font-size: 15px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn,
+.btn-default,
+.file-loader > label {
+  border-radius: 16px !important;
+  padding: 12px 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px;
+  transition: all 0.25s ease;
+}
+
+/* main purple buttons */
+.anvil-role-filled-button > .btn,
+.btn-primary,
+.anvil-role-tonal-button > .btn {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 12px 26px rgba(168, 85, 247, 0.28) !important;
+}
+
+.anvil-role-filled-button > .btn:hover,
+.btn-primary:hover,
+.anvil-role-tonal-button > .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #b86df8 0%, #9333ea 100%) !important;
+  box-shadow: 0 16px 30px rgba(168, 85, 247, 0.34) !important;
+}
+
+/* outlined button */
+.anvil-role-outlined-button > .btn {
+  background: rgba(255,255,255,0.9) !important;
+  color: #8b4fe0 !important;
+  border: 1.5px solid #d7b9f7 !important;
+  box-shadow: 0 6px 16px rgba(139, 79, 224, 0.08);
+}
+
+.anvil-role-outlined-button > .btn:hover {
+  background: #fbf7ff !important;
+  border-color: #b784f0 !important;
+  color: #7c3aed !important;
+  transform: translateY(-1px);
+}
+
+/* ---------- NOTIFICATION ---------- */
+body > div[data-notify="container"] {
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  box-shadow: 0 14px 32px rgba(95, 60, 140, 0.16) !important;
+  border-left: 5px solid #b07ce8;
+}
+
+body > div[data-notify="container"] > span[data-notify="title"] {
+  color: #4a305f !important;
+}
+
+body > div[data-notify="container"] > span[data-notify="message"] {
+  color: #6b5a7e !important;
+}
+
+/* ---------- OPTIONAL HERO TITLE STYLE ---------- */
+/* If your SRM REGISTRATION FORM title label has role = headline, it will look premium */
+.anvil-role-headline .label-text,
+.anvil-role-title .label-text {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .content > * > .anvil-container {
+    padding: 12px !important;
+  }
+
+  .anvil-role-elevated-card,
+  .anvil-role-outlined-card,
+  .anvil-role-tonal-card {
+    padding: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .anvil-role-headline {
+    font-size: 26px !important;
+  }
+
+  input.anvil-component,
+  textarea.anvil-component,
+  .anvil-component select,
+  .anvil-datepicker input {
+    padding: 12px 14px !important;
+  }
 }
